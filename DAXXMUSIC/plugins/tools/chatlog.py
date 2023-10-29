@@ -24,17 +24,17 @@ async def join_watcher(_, message):
             count = await app.get_chat_members_count(chat.id)
 
             msg = (
-                f"📝 ᴍᴜsɪᴄ ʙᴏᴛ ᴀᴅᴅᴇᴅ ɪɴ ᴀ ɴᴇᴡ ɢʀᴏᴜᴘ\n\n"
-                f"____________________________________\n\n"
-                f"📌 ᴄʜᴀᴛ ɴᴀᴍᴇ: {message.chat.title}\n"
-                f"🍂 ᴄʜᴀᴛ ɪᴅ: {message.chat.id}\n"
-                f"🔐 ᴄʜᴀᴛ ᴜsᴇʀɴᴀᴍᴇ: @{message.chat.username}\n"
-                f"🛰 ᴄʜᴀᴛ ʟɪɴᴋ: [ᴄʟɪᴄᴋ]({link})\n"
-                f"📈 ɢʀᴏᴜᴘ ᴍᴇᴍʙᴇʀs: {count}\n"
-                f"🤔 ᴀᴅᴅᴇᴅ ʙʏ: {message.from_user.mention}"
+                f"☼︎ ʙᴏᴛ ᴀᴅᴅᴇᴅ ɪɴ ᴀ #NEW_GROUP ☼︎\n\n"
+                f"⚊⚊⚊⚊⚊⚊✬✥✬⚊⚊⚊⚊⚊⚊⚊⚊✬✥✬⚊⚊⚊⚊⚊⚊\n\n"
+                f"☼︎ ɢʀᴏᴜᴘ ɴᴀᴍᴇ ⋆ ➺ {message.chat.title}\n"
+                f"☼︎ ɢʀᴏᴜᴘ ɪᴅ ⋆ ➺ {message.chat.id}\n"
+                f"☼︎ ɢʀᴏᴜᴘ ᴜsᴇʀɴᴀᴍᴇ ⋆ ➺ @{message.chat.username}\n"
+                f"☼︎ ɢʀᴏᴜᴘ ʟɪɴᴋ ⋆ ➺[ʙᴀʙʏ ᴛᴏᴜᴄʜ]({link})\n"
+                f"☼︎ ɢʀᴏᴜᴘ ᴍᴇᴍʙᴇʀs ⋆ ➺ {count}\n"
+                f"☼︎ ᴀᴅᴅᴇᴅ ʙʏ ⋆ ➺ {message.from_user.mention}"
             )
             await app.send_photo(LOG_GROUP_ID, photo=random.choice(photo), caption=msg, reply_markup=InlineKeyboardMarkup([
-            [InlineKeyboardButton(f"sᴇᴇ ɢʀᴏᴜᴘ👀", url=f"{link}")]
+            [InlineKeyboardButton(f"☼︎ sᴇᴇ ʙᴏᴛ ᴀᴅᴅᴇᴅ ɢʀᴏᴜᴘ ☼︎", url=f"{link}")]
          ]))
 
 
@@ -42,11 +42,11 @@ async def join_watcher(_, message):
 @app.on_message(filters.left_chat_member)
 async def on_left_chat_member(_, message: Message):
     if (await app.get_me()).id == message.left_chat_member.id:
-        remove_by = message.from_user.mention if message.from_user else "𝐔ɴᴋɴᴏᴡɴ 𝐔sᴇʀ"
+        remove_by = message.from_user.mention if message.from_user else "☼︎ ᴜɴᴋɴᴏᴡɴ ᴜsᴇʀ ☼︎"
         title = message.chat.title
-        username = f"@{message.chat.username}" if message.chat.username else "𝐏ʀɪᴠᴀᴛᴇ 𝐂ʜᴀᴛ"
+        username = f"@{message.chat.username}" if message.chat.username else "☼︎ ᴘʀɪᴠᴀᴛᴇ ᴄʜᴀᴛ ☼︎"
         chat_id = message.chat.id
-        left = f"✫ <b><u>#𝐋ᴇғᴛ_𝐆ʀᴏᴜᴘ</u></b> ✫\n\n𝐂ʜᴀᴛ 𝐓ɪᴛʟᴇ : {title}\n\n𝐂ʜᴀᴛ 𝐈ᴅ : {chat_id}\n\n𝐑ᴇᴍᴏᴠᴇᴅ 𝐁ʏ : {remove_by}\n\n𝐁ᴏᴛ : @{app.username}"
+        left = f"✵ <b><u>#LEFT_GROUP</u></b> ✵\n\n☼︎ ɢʀᴏᴜᴘ ɴᴀᴍᴇ ⋆ ➺ {title}\n\n☼︎ ɢʀᴏᴜᴘ ɪᴅ ⋆ ➺ {chat_id}\n\n☼︎ ʙᴏᴛ ʀᴇᴍᴏᴠᴇᴅ ʙʏ ⋆ ➺ {remove_by}\n\n☼︎ ʙᴏᴛ ɴᴀᴍᴇ ⋆ ➺ @{app.username}"
         await app.send_photo(LOG_GROUP_ID, photo=random.choice(photo), caption=left)
 
 #welcome
@@ -60,15 +60,15 @@ async def _greet(_, message):
             count = await app.get_chat_members_count(chat.id)
 
             msg = (
-                f"🌷{member.id}𝐖ᴇʟᴄᴏᴍᴇ 𝐈ɴ ᴀ 𝐍ᴇᴡ 𝐆ʀᴏᴜᴘ🥳\n\n"
-                f"📌𝐂ʜᴀᴛ 𝐍ᴀᴍᴇ: {message.chat.title}\n"
-                f"🔐𝐂ʜᴀᴛ 𝐔.𝐍: @{message.chat.username}\n"
-                f"💖𝐔ʀ 𝐈d: {member.id}\n"
-                f"✍️𝐔ʀ 𝐔.𝐍aмe: @{member.username}\n"
-                f"👥𝐂ᴏᴍᴘʟᴇᴛᴇᴅ {count} 𝐌ᴇᴍʙᴇʀ𝐬🎉"
+                f"🌷{member.id} ☼︎ ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴛʜᴇ ɴᴇᴡ ɢʀᴏᴜᴘ ☼︎\n\n"
+                f"☼︎ ɢʀᴏᴜᴘ ɴᴀᴍᴇ ⋆ ➺ {message.chat.title}\n"
+                f"☼︎ ɢʀᴏᴜᴘ ᴜsᴇʀɴᴀᴍᴇ ⋆ ➺ @{message.chat.username}\n"
+                f"☼︎ ʏᴏᴜʀ ɪᴅ ⋆ ➺ {member.id}\n"
+                f"☼︎ ʏᴏᴜʀ ᴜsᴇʀɴᴀᴍᴇ ⋆ ➺ @{member.username}\n"
+                f"☼︎ ᴄᴏᴍᴘʟᴇᴛᴇᴅ ᴛᴏᴛᴇʟ {count} ᴍᴇᴍʙᴇʀs ☼︎"
             )
             await app.send_photo(message.chat.id, photo=random.choice(photo), caption=msg, reply_markup=InlineKeyboardMarkup([
-            [InlineKeyboardButton(f"𝐊ɪᴅɴᴀᴘ 𝐌ᴇ", url=f"https://t.me/{app.username}?startgroup=true")]
+            [InlineKeyboardButton(f"☼︎ ᴀᴅᴅ ᴛᴏ ᴍᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘ ☼︎", url=f"https://t.me/{app.username}?startgroup=true")]
          ]))
 
 #tagall

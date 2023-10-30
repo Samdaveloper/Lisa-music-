@@ -7,10 +7,10 @@ from DAXXMUSIC import app
 def ul(_, message):
     reply = message.reply_to_message
     if reply.media:
-        i = message.reply("𝐌𝙰𝙺𝙴 𝐀 𝐋𝙸𝙽𝙺...")
+        i = message.reply("ᴍᴀᴋᴇ ᴀ ʟɪɴᴋ...")
         path = reply.download()
         fk = upload_file(path)
         for x in fk:
             url = "https://telegra.ph" + x
 
-        i.edit(f' 🇾ᴏᴜʀ🇹ᴇʟᴇɢʀᴀᴘʜ {url}')
+        i.edit(f' ✩ ʏᴏᴜʀ ᴛᴇʟᴇɢʀᴀᴘʜ ᴜʀʟ ɪs ʀᴇᴀᴅʏ ✩ {url}')

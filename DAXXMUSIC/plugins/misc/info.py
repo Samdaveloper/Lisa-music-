@@ -68,7 +68,6 @@ font_path = "DAXXMUSIC/assets/hiroko.ttf"
 INFO_TEXT = """
 ✵ ᴜsᴇʀ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ✵
 
-
 ☼︎ ᴜsᴇʀ ɪᴅ ⋆ ➺ {}
 
 ☼︎ ᴜsᴇʀ ɴᴀᴍᴇ ⋆ ➺ {}
